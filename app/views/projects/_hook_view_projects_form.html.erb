@@ -1,0 +1,4 @@
+<p>
+  <label for='is_priority'>優先度</label>
+  <%= select_tag 'priority[num]', options_for_select({"high" => 1, "middle" => 2, "low" => 3}, @project.priority), :include_blank => true, id: 'is_priority' %>
+</p>
