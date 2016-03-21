@@ -7,9 +7,11 @@ module ShowPriorityProjects
     included do
       unloadable
       has_one :priority_project, dependent: :destroy
+      safe_attributes :priority_project_attributes
+      accepts_nested_attributes_for :priority_project
     end
 
-    def priority?
+    def priority
       priority_project.try(:is_priority?)
     end
   end
